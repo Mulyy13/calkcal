@@ -1,0 +1,54 @@
+.targets {
+  display: flex;
+  // flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  &__item {
+    width: 30%;
+    height: 100px;
+    display: flex;
+    background-color: burlywood;
+    text-decoration: none;
+    border-radius: 25px;
+
+    &-image {
+      &--large {
+        border-radius: 25px;
+        width: 20%;
+        background-position: 0% 20%;
+        background-size: 150% 150%;
+        background-repeat: no-repeat;
+        background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/348361503_1681237065629761_4055123212250744685_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=VlWqvzG2Jt4AX8qn_yk&_nc_ht=scontent-waw1-1.xx&oh=03_AdTBi4xkT02CaD6AK1MCNO-FbKu0FfU5w7WjN89ntPXjcg&oe=64A6890F");
+      }
+      &--medium {
+        border-radius: 25px;
+        width: 20%;
+        background-position: 62% 80%;
+        background-size: 200% 150%;
+        background-repeat: no-repeat;
+        background-image: url("https://scontent.xx.fbcdn.net/v/t1.15752-9/350358443_640656344209224_7611060599587493252_n.jpg?stp=dst-jpg_s206x206&_nc_cat=105&ccb=1-7&_nc_sid=aee45a&_nc_ohc=bxurcX5aYV8AX84R4Ey&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRLyVFjWwsPKDYZ6XdvlORcveK1qfAOEOhU0J28P3Y88w&oe=64A675F6");
+      }
+      &--small {
+        border-radius: 25px;
+        width: 20%;
+        background-position: 40% 80%;
+        background-size: 100% 120%;
+        background-repeat: no-repeat;
+        background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/348385937_823739129463399_8129732451387200668_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=C53kRUgbS4UAX9vFPwm&_nc_ht=scontent-waw1-1.xx&oh=03_AdREMHRrNylLO076BN54Xs6ioX85TQdFNpbqf4OYH5HrYQ&oe=64A68FE0");
+      }
+    }
+
+    &-name {
+      width: 80%;
+      text-align: center;
+      margin: auto 0;
+      color: black;
+      font-size: 24px;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+  }
+}
