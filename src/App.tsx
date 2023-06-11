@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.scss";
+import Layout from "./layout/layout";
+import Targets from "./components/targets/targets";
+import Gain from "./components/gain/gain";
+import Maintenance from "./components/maintenance/maintenance";
+import Reduction from "./components/reduction/reduction";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+    <Router>
+      <Targets />
+      <Routes>
+        <Route path="/gain" element={<Gain />}></Route>
+        <Route path="/maintenance" element={<Maintenance />}></Route>
+        <Route path="/reduction" element={<Reduction />}></Route>
+      </Routes>
+    </Router>
+  </Layout>
   );
 }
 
