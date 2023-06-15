@@ -1,8 +1,12 @@
 import "./layout.scss";
-import React from "react";
+import React, { ReactNode } from "react";
 import PropTypes from "prop-types";
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <section className="layout">
       <main className="layout__wrapper">{children}</main>

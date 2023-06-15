@@ -1,0 +1,21 @@
+.calculator {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__gender {
+    min-width: 250px;
+  }
+  &__age {
+    border: 2px solid blue;
+  }
+  &__weight {
+  }
+  &__height {
+  }
+  &__activity {
+  }
+  &__submit-button {
+    width: 200px;
+  }
+}
