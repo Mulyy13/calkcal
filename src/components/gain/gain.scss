@@ -1,0 +1,23 @@
+.calculator-gain {
+  display: flex;
+  &__form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    &-label {
+      min-width: 250px;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__result {
+    width: 50%;
+    height: 100vh;
+    background-color: wheat;
+  }
+}

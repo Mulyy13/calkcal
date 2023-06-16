@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "./calculator.scss"
+import { IoMdFemale, IoMdMale } from 'react-icons/io';
 
 interface CalculatorProps {
     onTotalMetabolismChange: (totalMetabolism: number) => void;
@@ -12,19 +13,19 @@ const Calculator: React.FC<CalculatorProps> = ({
     const [height, setHeight] = useState<number>(0);
     const [age, setAge] = useState<number>(0);
     const [activity, setActivity] = useState<number>(0);
-    const [gender, setGender] = useState<number>(0);
+    const [genderPoints, setGenderPoints] = useState<number>(0);
+    const [inputFocus, setInputFocus] = useState<number>(0);
+    const [isFemale, setIsFemale] = useState<boolean>(true)
+    const [colorActivity, setColorActivity] = useState<string>("black")
+
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) { 
     e.preventDefault();
         const weightCalc = 10 * weight;
         const heightCalc = 6.25 * height;
         const ageCalc = 5 * age;
-        const basicMetabolism =
-          weightCalc + heightCalc - ageCalc + gender;
+        const basicMetabolism = weightCalc + heightCalc - ageCalc + genderPoints;
         const totalMetabolism = basicMetabolism * activity;
-        // const deficitCalc = deficit * 0.3;
-        // const deficitCalcInKcal = totalMetabolism * deficitCalc;
-        // const totalCalories = totalMetabolism - deficitCalcInKcal
         onTotalMetabolismChange(totalMetabolism);
 
       }
@@ -32,70 +33,56 @@ const Calculator: React.FC<CalculatorProps> = ({
     <section>
         <main className="calculator">
         <form className="calculator__wrapper" onSubmit={handleSubmit}  >
-            <label className="calculator__gender">
-            
-              <select
-                value={gender}
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-                  setGender(Number(e.target.value));
-                }}
-              >
-                <option value={-161} >
-                  Kobieta
-                </option>
-                <option value={5} >
-                  Mężczyzna
-                </option>
-              </select>Płeć
-            </label>
-            <label className="calculator__age">
-            
-              <input
-              
+            <label className="calculator__age calculator__label"> <span className={inputFocus === 1 ? "calculator__label-text" : ""}>Wiek</span>
+              <input className="calculator__age-input calculator__label-input"
+              onClick={() => {setInputFocus(1)}}
               type="text"
                 name="age"
+                required={true}
                 value={age}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setAge(Number(e.target.value));
                 }}
-              />  Wiek
+              />
             </label>
-            <label className="calculator__weight">
-              
-              <input
+            <label className="calculator__weight calculator__label"> <span className={inputFocus === 2 ? "calculator__label-text" : ""}>Waga</span>
+              <input className="calculator__weight-input calculator__label-input"
+              onClick={() => {setInputFocus(2);}}
                 name="weight"
                 value={weight}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setWeight(Number(e.target.value));
                 }}
-              />Waga
+              />
             </label>
-            <label className="calculator__height">
-             
-              <input
+            <label className="calculator__height calculator__label"> <span className={inputFocus === 3 ? "calculator__label-text" : ""}>Wzrost</span>
+              <input className="calculator__height-input calculator__label-input"   
+              onClick={() => {setInputFocus(3)}}
                 name="height"
                 value={height}
                 onChange={(e) => {
                   setHeight(Number(e.target.value));
                 }}
-              /> Wzrost
+              />
             </label>
-            <label className="calculator__activity">
-              
-              <select
-                value={activity}
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-                  setActivity(Number(e.target.value));
-                }}
-              >
-                <option value={1.4}>Minimalna</option>
-                <option value={1.6}>Mała</option>
-                <option value={1.7}>Umiarkowana</option>
-                <option value={1.9}>Intensywna</option>
-                <option value={2.3}>Bardzo intensywna</option>
-              </select>Aktywność
+            <label className="calculator__gender calculator__label"> <span>Płeć</span>
+            <div className="calculator__gender-box">
+              <div className={"calculator__gender-female" + (isFemale ? " calculator__gender-female--active" : "")}
+                   onClick={()=> {setIsFemale(true); setGenderPoints(-161)}}><IoMdFemale/></div>
+              <div className={"calculator__gender-male" + (isFemale ? "" : " calculator__gender-male--active")}
+                   onClick={()=> {setIsFemale(false); setGenderPoints(5)}}><IoMdMale/></div>
+            </div>
+          </label>
+            <label className="calculator__activity" > <span className="calculator__activity-text"  style={{backgroundColor:String(colorActivity)}}>Aktywność</span>
+            <div className="calculator__activity-box">
+              <div className="calculator__activity-item activity-item__minimum"  onClick={()=>{setActivity(1.4); setColorActivity("rgb(207, 255, 207)")}}></div>
+              <div className="calculator__activity-item activity-item__little"  onClick={()=>{setActivity(1.6); setColorActivity("rgb(1, 179, 31)")}}></div>
+              <div className="calculator__activity-item activity-item__average" onClick={()=>{setActivity(1.7);setColorActivity("rgb(255, 230, 0)")}}></div>
+              <div className="calculator__activity-item activity-item__high" onClick={()=>{setActivity(1.9);setColorActivity("rgb(255, 123, 0)")}}></div>
+              <div className="calculator__activity-item activity-item__huge" onClick={()=>{setActivity(2.3);setColorActivity("rgb(240, 0, 0)")}}></div>
+              </div>
             </label>
-            <button className="calculator__submit-button" type="submit">Wyślij</button>
+            <button className="calculator__submit-button" type="submit">Oblicz</button>
           </form>
         </main>
       </section> );

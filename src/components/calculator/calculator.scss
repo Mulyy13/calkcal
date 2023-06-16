@@ -1,21 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
+
 .calculator {
   &__wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-family: "Bebas Neue", sans-serif;
   }
   &__gender {
-    min-width: 250px;
+    &-box {
+      width: 200px;
+      height: 35px;
+      border: 1px solid black;
+      display: flex;
+      border-radius: 10px;
+      .calculator__gender-female {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 50%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        transition: 0.7s;
+        &--active {
+          background-color: pink;
+          transition: 0.7s;
+        }
+      }
+      .calculator__gender-male {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 50%;
+        transition: 0.7s;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        &--active {
+          background-color: aqua;
+          transition: 0.7s;
+        }
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    &-text {
+      display: inline-block;
+      animation: moveUpDown 0.7s linear forwards;
+      color: blue;
+    }
   }
   &__age {
-    border: 2px solid blue;
+    &-input {
+      // border: 1px solid blue;
+    }
   }
   &__weight {
   }
   &__height {
   }
   &__activity {
+    text-align: center;
+    width: 200px;
+    &-text {
+      width: 70px;
+      display: inline-block;
+      color: white;
+      transition: 0.8s;
+    }
+    &-box {
+      width: 200px;
+      height: 50px;
+      display: flex;
+      cursor: pointer;
+
+      .calculator__activity-item {
+        width: 20%;
+        display: flex;
+        align-self: flex-end;
+        border: 1px solid black;
+      }
+      .activity-item__minimum {
+        background-color: rgb(207, 255, 207);
+        height: 20%;
+        border-right: none;
+      }
+      .activity-item__little {
+        background-color: rgb(1, 179, 31);
+        height: 40%;
+        border-right: none;
+      }
+      .activity-item__average {
+        background-color: rgb(255, 230, 0);
+        height: 60%;
+        border-right: none;
+      }
+      .activity-item__high {
+        background-color: rgb(255, 123, 0);
+        height: 80%;
+        border-right: none;
+      }
+      .activity-item__huge {
+        background-color: rgb(240, 0, 0);
+        height: 100%;
+      }
+    }
   }
   &__submit-button {
     width: 200px;
+  }
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
