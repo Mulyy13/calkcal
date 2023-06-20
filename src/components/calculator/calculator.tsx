@@ -33,7 +33,7 @@ const Calculator: React.FC<CalculatorProps> = ({
     <section>
         <main className="calculator">
         <form className="calculator__wrapper" onSubmit={handleSubmit}  >
-            <label className="calculator__age calculator__label"> <span className={inputFocus === 1 ? "calculator__label-text" : ""}>Wiek</span>
+            <label className="calculator__age calculator__label"> <span className={inputFocus === 1 ? "calculator__label-text--active" : ""}>Wiek</span>
               <input className="calculator__age-input calculator__label-input"
               onClick={() => {setInputFocus(1)}}
               type="text"
@@ -45,7 +45,7 @@ const Calculator: React.FC<CalculatorProps> = ({
                 }}
               />
             </label>
-            <label className="calculator__weight calculator__label"> <span className={inputFocus === 2 ? "calculator__label-text" : ""}>Waga</span>
+            <label className="calculator__weight calculator__label"> <span className={inputFocus === 2 ? "calculator__label-text--active" : ""}>Waga</span>
               <input className="calculator__weight-input calculator__label-input"
               onClick={() => {setInputFocus(2);}}
                 name="weight"
@@ -55,7 +55,7 @@ const Calculator: React.FC<CalculatorProps> = ({
                 }}
               />
             </label>
-            <label className="calculator__height calculator__label"> <span className={inputFocus === 3 ? "calculator__label-text" : ""}>Wzrost</span>
+            <label className="calculator__height calculator__label"> <span className={inputFocus === 3 ? "calculator__label-text--active" : ""}>Wzrost</span>
               <input className="calculator__height-input calculator__label-input"   
               onClick={() => {setInputFocus(3)}}
                 name="height"

@@ -7,6 +7,10 @@ import Maintenance from "./components/maintenance/maintenance";
 import Reduction from "./components/reduction/reduction";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
+
+
+
 function App() {
   return (
     <Layout>
@@ -19,6 +23,7 @@ function App() {
       </Routes>
     </Router>
   </Layout>
+  
   );
 }
 

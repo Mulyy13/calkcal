@@ -1,0 +1,26 @@
+@import "../../styles/fonts.scss";
+.maintenance {
+  .calculator-maintenance {
+    display: flex;
+    flex-direction: row;
+    &__form {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+    &__result {
+      width: 50%;
+      font-family: $PrimaryFont;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      // background-color: aliceblue;
+      &-box {
+        width: 70%;
+      }
+    }
+  }
+  .description {
+  }
+}
