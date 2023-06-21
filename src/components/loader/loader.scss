@@ -1,3 +1,5 @@
+@import "../../styles/colors/colors.scss";
+
 .loader {
   display: flex;
   text-align: center;
@@ -32,14 +34,14 @@
 @keyframes ring {
   0% {
     transform: rotate(0deg);
-    box-shadow: 1px 5px 2px #9dff00;
+    box-shadow: 1px 5px 2px $primaryColor;
   }
   50% {
     transform: rotate(180deg);
-    box-shadow: 1px 5px 2px #128500;
+    box-shadow: 1px 5px 2px $secondaryColor;
   }
   100% {
     transform: rotate(360deg);
-    box-shadow: 1px 5px 2px #15ff00;
+    box-shadow: 1px 5px 2px $thirdColor;
   }
 }

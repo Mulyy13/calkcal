@@ -7,20 +7,31 @@
       width: 50%;
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      h2 {
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        padding: 30px 0;
+      }
     }
     &__result {
       width: 50%;
-      font-family: $PrimaryFont;
+      font-family: $primaryFont;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: start;
-      // background-color: aliceblue;
+      h5 {
+        text-align: center;
+        font-size: 34px;
+      }
       &-box {
         width: 70%;
+        .calculator__result {
+          font-size: 24px;
+          text-align: center;
+        }
       }
     }
-  }
-  .description {
   }
 }

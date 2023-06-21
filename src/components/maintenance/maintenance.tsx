@@ -10,8 +10,10 @@ const Maintenance: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleResult = () => {
-    return (  <div><span>Jeśli chcesz utrzymać podaną wagę, powinieneś dziennie dostarczać organizmowi </span>
-    {totalMetabolism.toFixed(0)} kcal</div>)
+    return (  <div className="calculator__result">
+      <h5>{totalMetabolism.toFixed(0)} Kcal</h5>
+      <p className="calculator__result-text">Tyle kalorii potrzeba, żeby utrzymać Twoją wagę </p>
+      </div>)
     }
 
 const loadingContent = () =>{
@@ -31,7 +33,7 @@ const loadingContent = () =>{
 
   return ( <div className="maintenance">
   <div className="calculator-maintenance">
-  <section className="calculator-maintenance__form">
+  <section className="calculator-maintenance__form"> 
 <Calculator onTotalMetabolismChange={handleTotalMetabolismChange}/>
   </section>
   <section className="calculator-maintenance__result">

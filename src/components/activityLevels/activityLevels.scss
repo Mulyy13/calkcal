@@ -1,27 +1,113 @@
+@import "../../styles/fonts.scss";
+@import "../../styles/colors/colors.scss";
+
 .activity {
   width: 100%;
-  height: 500px;
   display: flex;
+  flex-direction: column;
+  font-family: $articleFont;
 
-  &__text {
-    width: 70%;
-    &-title {
-      text-align: center;
+  &__entry {
+    display: flex;
+    color: white;
+    &-text {
+      width: 70%;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      background-color: $secondaryColor;
+      .activity__title {
+        font-family: $primaryFont;
+        font-size: $titleFontSize;
+        text-align: center;
+        padding: 20px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      p {
+        padding: 15px 40px;
+      }
     }
-    &-description {
-      text-align: center;
+    &-image {
+      width: 30%;
+
+      border-left: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
-  &__image {
-    width: 350px;
-    height: 250px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
+
   &__levels {
-    &__item {
+    display: flex;
+    flex-direction: column;
+
+    h6 {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      font-size: 14px;
+    }
+    &-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 100px;
+      &-minimal {
+        border-top-left-radius: 10px;
+        background: rgb(207, 255, 207);
+        background: linear-gradient(
+          90deg,
+          rgba(207, 255, 207, 1) 0%,
+          rgba(255, 255, 255, 1) 25%
+        );
+      }
+
+      &-small {
+        background: rgb(1, 179, 31);
+        background: linear-gradient(
+          90deg,
+          rgba(1, 179, 31, 1) 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+      &-average {
+        background: rgb(255, 230, 0);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 230, 0, 1) 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+      &-high {
+        background: rgb(255, 123, 0);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 123, 0, 1) 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+      }
+      &-huge {
+        background: rgb(240, 0, 0);
+        background: linear-gradient(
+          90deg,
+          rgba(240, 0, 0, 1) 0%,
+          rgba(255, 255, 255, 1) 35%
+        );
+        border-bottom-left-radius: 10px;
+      }
+      .activity__item-text {
+        font-family: $articleFont;
+        display: flex;
+        flex-direction: column;
+        margin: auto 0;
+        width: 70%;
+        padding-right: 30px;
+      }
     }
   }
 }
+// rgb(207, 255, 207)rgb(1, 179, 31)rgb(255, 230, 0)rgb(255, 123, 0)rgb(240, 0, 0)

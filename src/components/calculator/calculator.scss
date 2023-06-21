@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
+@import "../../styles/colors/colors.scss";
 
 .calculator {
+  padding-bottom: 50px;
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -21,19 +24,17 @@
       &--active {
         display: inline-block;
         animation: moveUpDown 0.7s linear forwards;
-        color: green;
+        color: $secondaryColor;
       }
     }
     &-input {
-      border: 1px solid green;
+      border: 1px solid $secondaryColor;
       height: 35px;
       text-align: center;
       font-size: 18px;
       border-radius: 10px;
       &:focus {
         outline: none;
-        border: 3px inset green;
-        box-shadow: inset 2px 2px 0px 0px rgba(16, 107, 12, 1);
       }
     }
   }
@@ -76,14 +77,6 @@
     }
   }
 
-  &__age {
-    &-input {
-    }
-  }
-  &__weight {
-  }
-  &__height {
-  }
   &__activity {
     text-align: center;
     width: 250px;
@@ -136,13 +129,14 @@
     width: 250px;
     background-color: white;
 
-    border: 1px solid green;
+    border: 1px solid $secondaryColor;
     padding: 5px 0px;
     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
     cursor: pointer;
+    border-radius: 10px;
     &:hover {
-      background-color: green;
+      background-color: $secondaryColor;
       color: white;
     }
   }
