@@ -1,0 +1,107 @@
+@import '../../../styles/main.scss';
+
+.bmi {
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  border-radius: 10px;
+  margin-bottom: 60px;
+  &__entry {
+    display: flex;
+    width: 100%;
+    &-description {
+      width: 40%;
+      background-color: $secondaryColor;
+      h6 {
+        text-align: center;
+        font-size: $titleFontSize;
+        font-family: $primaryFont;
+        color: white;
+        padding: 20px;
+        letter-spacing: 0.5px;
+      }
+      p {
+        color: white;
+        font-family: $articleFont;
+        padding: 0px 40px 15px 40px;
+      }
+    }
+
+    &-image-mass {
+      width: 30%;
+      img {
+        height: 100%;
+        width: 100%;
+        border-top-right-radius: 10px;
+      }
+    }
+    &-image-reduction {
+      width: 30%;
+      img {
+        height: 100%;
+        width: 100%;
+        border-top-left-radius: 10px;
+      }
+    }
+  }
+  &__array-container {
+    width: 100%;
+    display: flex;
+    font-family: $articleFont;
+    color: white;
+    .bmi__array-description-left {
+      width: 30%;
+      background-color: $secondaryColor;
+      padding: 20px;
+      border-bottom-left-radius: 9px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h6 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        font-size: 24px;
+        width: 40%;
+        height: 50px;
+        margin: 0 auto;
+        color: $secondaryColor;
+        border-radius: 25px;
+        text-transform: uppercase;
+      }
+      p {
+        padding: 20px;
+      }
+      .bmi__array-list {
+        padding: 0 20px 20px 20px;
+      }
+    }
+    .bmi__array-description-right {
+      width: 30%;
+      background-color: $secondaryColor;
+      padding: 40px;
+      display: flex;
+      line-height: 150%;
+      border-bottom-right-radius: 9px;
+      display: flex;
+      align-items: center;
+    }
+    .bmi__array {
+      width: 40%;
+      &-middle {
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}

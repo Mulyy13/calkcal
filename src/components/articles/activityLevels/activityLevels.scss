@@ -1,19 +1,21 @@
-@import "../../styles/fonts.scss";
-@import "../../styles/colors/colors.scss";
+@import '../../../styles/main.scss';
 
 .activity {
   width: 100%;
   display: flex;
   flex-direction: column;
   font-family: $articleFont;
-
+  margin-bottom: 60px;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  border-top-left-radius: 15px;
   &__entry {
     display: flex;
     color: white;
+    border-bottom-left-radius: 15px;
     &-text {
       width: 70%;
       border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
+      border-bottom: 2px dashed white;
       background-color: $secondaryColor;
       .activity__title {
         font-family: $primaryFont;
@@ -38,6 +40,48 @@
     }
   }
 
+  &__rubric {
+    background-color: $secondaryColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    &-level {
+      text-align: center;
+      width: 25%;
+      margin: auto 0;
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+    }
+    &-types {
+      font-family: $articleFont;
+      display: flex;
+      flex-direction: row;
+      margin: auto 0;
+      width: 70%;
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      padding: 10px 30px 10px 0;
+      text-transform: uppercase;
+
+      .activity__work {
+        width: 50%;
+        text-align: center;
+        padding: 10px 0px 10px 0;
+      }
+      .activity__home {
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        border-left: none;
+        padding: 10px 0px 10px 0;
+      }
+    }
+  }
+
   &__levels {
     display: flex;
     flex-direction: column;
@@ -47,8 +91,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 150px;
-      font-size: 14px;
+      width: 15%;
+      font-size: 16px;
     }
     &-item {
       display: flex;
@@ -56,13 +100,14 @@
       justify-content: space-between;
       width: 100%;
       height: 100px;
+
       &-minimal {
-        border-top-left-radius: 10px;
         background: rgb(207, 255, 207);
         background: linear-gradient(
           90deg,
           rgba(207, 255, 207, 1) 0%,
-          rgba(255, 255, 255, 1) 25%
+          rgba(224, 255, 224, 1) 27%,
+          rgba(255, 255, 255, 1) 100%
         );
       }
 
@@ -71,7 +116,8 @@
         background: linear-gradient(
           90deg,
           rgba(1, 179, 31, 1) 0%,
-          rgba(255, 255, 255, 1) 35%
+          rgba(176, 231, 186, 1) 30%,
+          rgba(255, 255, 255, 1) 100%
         );
       }
       &-average {
@@ -79,7 +125,8 @@
         background: linear-gradient(
           90deg,
           rgba(255, 230, 0, 1) 0%,
-          rgba(255, 255, 255, 1) 35%
+          rgba(255, 249, 187, 1) 30%,
+          rgba(255, 255, 255, 1) 100%
         );
       }
       &-high {
@@ -87,7 +134,8 @@
         background: linear-gradient(
           90deg,
           rgba(255, 123, 0, 1) 0%,
-          rgba(255, 255, 255, 1) 35%
+          rgba(255, 221, 189, 1) 30%,
+          rgba(255, 255, 255, 1) 100%
         );
       }
       &-huge {
@@ -95,17 +143,20 @@
         background: linear-gradient(
           90deg,
           rgba(240, 0, 0, 1) 0%,
-          rgba(255, 255, 255, 1) 35%
+          rgba(251, 181, 181, 1) 30%,
+          rgba(255, 255, 255, 1) 100%
         );
-        border-bottom-left-radius: 10px;
       }
       .activity__item-text {
         font-family: $articleFont;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         margin: auto 0;
         width: 70%;
         padding-right: 30px;
+        p {
+          width: 50%;
+        }
       }
     }
   }

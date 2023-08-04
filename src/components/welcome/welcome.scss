@@ -1,0 +1,159 @@
+@import '../../styles/main.scss';
+
+.welcome {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  background-image: url('../../assets/pictures/backgroundd.jpg');
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .welcome__app-name {
+      font-size: 78px;
+      font-family: $AppNameFont;
+      color: $thirdColor;
+      padding-bottom: 30px;
+      text-shadow: 3px 3px 6px rgba(0, 148, 163, 1);
+      span {
+        padding-right: 3px;
+      }
+    }
+    .welcome__title {
+      font-family: $font3;
+      font-size: 24px;
+      padding-bottom: 30px;
+    }
+    .welcome__button {
+      font-size: 28px;
+      border: 2px solid $thirdColor;
+      padding: 10px 48px;
+      border-radius: 25px;
+      font-family: $font3;
+      text-transform: uppercase;
+      font-weight: 700;
+      // margin: auto 0;
+      height: 100%;
+      cursor: pointer;
+      color: $thirdColor;
+      display: flex;
+      &-text {
+        color: $thirdColor;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: $thirdColor;
+        box-shadow: 0px 0px 40px 2px rgba(0, 148, 163, 1);
+        color: white;
+      }
+      &:hover .welcome__button-text {
+        color: white;
+        text-shadow: 0px 0px 26px white;
+      }
+    }
+  }
+}
+@media (max-width: 1399px) {
+}
+@media (max-width: 1199px) {
+  .welcome {
+    &__wrapper {
+      .welcome__app-name {
+        font-size: calc(78px * 0.9);
+        span {
+        }
+      }
+      .welcome__title {
+        font-size: calc(24px * 0.9);
+      }
+      .welcome__button {
+        &-text {
+          font-size: calc(28px * 0.9);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+  .welcome {
+    &__wrapper {
+      .welcome__app-name {
+        font-size: calc(78px * 0.8);
+      }
+      .welcome__title {
+        font-size: calc(24px * 0.75);
+      }
+      .welcome__button {
+        &-text {
+          font-size: calc(28px * 0.75);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .welcome {
+    &__wrapper {
+      .welcome__app-name {
+        font-size: calc(78px * 0.8);
+      }
+      .welcome__title {
+        font-size: calc(24px * 0.6);
+      }
+      .welcome__button {
+        &-text {
+          font-size: calc(28px * 0.6);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .welcome {
+    &__wrapper {
+      .welcome__app-name {
+        font-size: calc(78px * 0.75);
+      }
+      .welcome__title {
+        font-size: calc(24px * 0.6);
+        width: 60%;
+        text-align: center;
+      }
+      .welcome__button {
+        &-text {
+          font-size: calc(28px * 0.6);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 375px) {
+  .welcome {
+    &__wrapper {
+      .welcome__app-name {
+        font-size: calc(78px * 0.75);
+      }
+      .welcome__title {
+        font-size: calc(24px * 0.6);
+        width: 60%;
+        text-align: center;
+      }
+      .welcome__button {
+        &-text {
+          font-size: calc(28px * 0.6);
+        }
+      }
+    }
+  }
+}

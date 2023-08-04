@@ -1,0 +1,98 @@
+@import '../../styles/main.scss';
+.reduction {
+  margin-bottom: 50px;
+  width: 100%;
+  &__calculator {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid $secondaryColor;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    background-color: white;
+    .reduction__form {
+      background-color: $thirdColor;
+      border-radius: 20px 20px;
+      width: 30%;
+      &-weekly-reduct {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 18px;
+        font-family: $primaryFont;
+        background-color: $thirdColor;
+        border-top-left-radius: 18px;
+        width: 100%;
+        color: white;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        .reduction__weekly-reduct-text {
+          &--active {
+            display: inline-block;
+            animation: moveUpDown 0.7s linear forwards;
+          }
+        }
+
+        .calculator__label-input {
+          width: 250px;
+          margin: 0 auto;
+        }
+      }
+    }
+    .reduction__result {
+      width: 70%;
+      font-family: $primaryFont;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      &-box {
+        width: 70%;
+        .calculator__result {
+          font-size: 24px;
+          text-align: center;
+          .result__text {
+            padding: 20px 20px 60px 20px;
+          }
+          h5 {
+            text-align: center;
+            font-size: 34px;
+          }
+          .result__chart-box {
+            width: 100%;
+            height: 300px;
+            margin: 0 auto;
+            display: flex;
+            .result__nutritions {
+              min-width: 200px;
+              text-align: start;
+              margin: auto 0;
+              &-protein {
+                &--blue {
+                  color: #167cf7;
+                }
+              }
+              &-carbo {
+                &--green {
+                  color: #32eb1a;
+                }
+              }
+              &-fat {
+                &--yellow {
+                  color: #f0c724;
+                }
+              }
+            }
+            .result__chart-box-chart {
+              margin: auto 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

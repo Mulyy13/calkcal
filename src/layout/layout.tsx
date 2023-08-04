@@ -1,6 +1,6 @@
-import "./layout.scss";
-import React, { ReactNode } from "react";
-import PropTypes from "prop-types";
+import './layout.scss';
+import React, { ReactNode } from 'react';
+import PropTypes from 'prop-types';
 
 interface LayoutProps {
   children: ReactNode;

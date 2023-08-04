@@ -1,56 +1,143 @@
-@import "../../styles/colors/colors.scss";
-@import "../../styles/fonts.scss";
+@import '../../styles/main.scss';
 
 .targets {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 50px;
+  padding-top: 50px;
   &__item {
     width: 30%;
-    height: 100px;
+    height: 98px;
     display: flex;
     background-color: $secondaryColor;
     text-decoration: none;
     border-radius: 25px;
+    &-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      text-decoration: none;
+      .targets__item-image {
+        border-radius: 25px;
+        width: 25%;
+        height: 100%;
+        background-position: center;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-image: url('../../assets/targetsImages/gain.png');
+        &--equal {
+          border-radius: 25px;
+          width: 25%;
+          background-position: center;
+          background-size: 80%;
 
-    &-image {
-      &--large {
-        border-radius: 25px;
-        width: 20%;
-        background-position: 0% 20%;
-        background-size: 150% 150%;
-        background-repeat: no-repeat;
-        background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/348361503_1681237065629761_4055123212250744685_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=VlWqvzG2Jt4AX8qn_yk&_nc_ht=scontent-waw1-1.xx&oh=03_AdTBi4xkT02CaD6AK1MCNO-FbKu0FfU5w7WjN89ntPXjcg&oe=64A6890F");
-      }
-      &--medium {
-        border-radius: 25px;
-        width: 20%;
-        background-position: 62% 80%;
-        background-size: 200% 150%;
-        background-repeat: no-repeat;
-        background-image: url("https://scontent.xx.fbcdn.net/v/t1.15752-9/350358443_640656344209224_7611060599587493252_n.jpg?stp=dst-jpg_s206x206&_nc_cat=105&ccb=1-7&_nc_sid=aee45a&_nc_ohc=bxurcX5aYV8AX84R4Ey&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRLyVFjWwsPKDYZ6XdvlORcveK1qfAOEOhU0J28P3Y88w&oe=64A675F6");
-      }
-      &--small {
-        border-radius: 25px;
-        width: 20%;
-        background-position: 40% 80%;
-        background-size: 100% 120%;
-        background-repeat: no-repeat;
-        background-image: url("https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/348385937_823739129463399_8129732451387200668_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=C53kRUgbS4UAX9vFPwm&_nc_ht=scontent-waw1-1.xx&oh=03_AdREMHRrNylLO076BN54Xs6ioX85TQdFNpbqf4OYH5HrYQ&oe=64A68FE0");
-      }
-    }
+          background-repeat: no-repeat;
+          background-image: url('../../assets/targetsImages/balance.png');
+        }
+        &--plus {
+          border-radius: 25px;
+          width: 105px;
+          background-position: center;
+          background-size: 80%;
+          background-repeat: no-repeat;
+          background-image: url('../../assets/targetsImages/gain.png');
+        }
 
-    &-name {
-      width: 80%;
-      text-align: center;
-      margin: auto 0;
-      color: black;
-      font-size: 34px;
-      font-family: $primaryFont;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: white;
-      letter-spacing: 1px;
+        &--minus {
+          border-radius: 25px;
+          width: 25%;
+          background-position: center;
+          background-size: 80%;
+          background-repeat: no-repeat;
+          background-image: url('../../assets/targetsImages/loss.png');
+        }
+      }
+
+      .targets__item-name {
+        width: 80%;
+        text-align: center;
+        margin: auto 0;
+        color: black;
+        font-size: 34px;
+        font-family: $primaryFont;
+        text-transform: uppercase;
+
+        font-weight: 800;
+        color: white;
+        letter-spacing: 1px;
+      }
     }
   }
+}
+
+@media (max-width: 375px) {
+}
+@media (max-width: 575px) {
+}
+@media (max-width: 767px) {
+  .targets {
+    padding: 0px;
+    background-color: $thirdColor;
+    justify-content: space-around;
+    &__item {
+      background-color: $thirdColor;
+      width: 25%;
+      &-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        .targets__item-image {
+          border-radius: 25px;
+          width: 25%;
+          height: 100%;
+          background-position: center;
+          background-size: 80%;
+          background-repeat: no-repeat;
+          background-image: url('../../assets/targetsImages/gain.png');
+          &--equal {
+            border-radius: 25px;
+            width: 25%;
+            background-position: center;
+            background-size: 80%;
+
+            background-repeat: no-repeat;
+            background-image: url('../../assets/targetsImages/balance.png');
+          }
+          &--plus {
+            border-radius: 25px;
+            width: 25%;
+            background-position: center;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-image: url('../../assets/targetsImages/gain.png');
+          }
+
+          &--minus {
+            border-radius: 25px;
+            width: 25%;
+            background-position: center;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-image: url('../../assets/targetsImages/loss.png');
+          }
+        }
+
+        .targets__item-name {
+          font-size: calc(20px * 0.8);
+          font-weight: 500;
+          color: white;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1399px) {
 }

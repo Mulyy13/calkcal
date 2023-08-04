@@ -1,30 +1,57 @@
+import React from 'react';
+import './App.scss';
+import Layout from './layout/layout';
+// import Targets from './components/targets/targets';
+import Gain from './templates/gain/gain';
+import Maintenance from './templates/maintenance/maintenance';
+import Reduction from './templates/reduction/reduction';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Welcome from './components/welcome/Welcome';
+import Home from './components/home/Home';
 
-import "./App.scss";
-import Layout from "./layout/layout";
-import Targets from "./components/targets/targets";
-import Gain from "./components/gain/gain";
-import Maintenance from "./components/maintenance/maintenance";
-import Reduction from "./components/reduction/reduction";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+const App: React.FC = () => {
+  const handleTotalNutritionsChange = (
+    totalProteins: number,
+    totalFat: number,
+    totalCarbons: number,
+  ) => {
+    return null;
+  };
 
-
-
-
-
-function App() {
   return (
     <Layout>
-    <Router>
-      <Targets />
-      <Routes>
-        <Route path="/gain" element={<Gain />}></Route>
-        <Route path="/maintenance" element={<Maintenance />}></Route>
-        <Route path="/reduction" element={<Reduction />}></Route>
-      </Routes>
-    </Router>
-  </Layout>
-  
+      <Router>
+        {/* <Targets /> */}
+        {/* <Welcome /> */}
+        <Routes>
+          <Route path={'/'} element={<Welcome />} />
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/gain"
+            element={
+              <Gain onTotalNutritionsChange={handleTotalNutritionsChange} />
+            }
+          />
+          <Route
+            path="/maintenance"
+            element={
+              <Maintenance
+                onTotalNutritionsChange={handleTotalNutritionsChange}
+              />
+            }
+          />
+          <Route
+            path="/reduction"
+            element={
+              <Reduction
+                onTotalNutritionsChange={handleTotalNutritionsChange}
+              />
+            }
+          />
+        </Routes>
+      </Router>
+    </Layout>
   );
-}
+};
 
 export default App;
